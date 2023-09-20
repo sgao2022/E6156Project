@@ -17,12 +17,15 @@ async def root():
 
 @app.get("/hello/{name}")
 async def say_hello(name: str):
-    return {"message": f"Awesome cloud developer sg4140 says hello {name}"}
+    return {
+        "message": f"hello {name}",
+        "Sender": "Shen Gao"
+    }
 
 
 @app.get("/hello_text/{name}")
 async def say_hello_text(name: str):
-    the_message = f"Awesome cloud developer sg4140 says Hello {name}"
+    the_message = f"Hello {name}"
     rsp = Response(content=the_message, media_type="text/plain")
     return rsp
 
